@@ -1,0 +1,126 @@
+/* .loader {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    margin: 100px auto;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    z-index: 0;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.loader:before,
+.loader:after {
+    opacity: 0;
+    box-sizing: border-box;
+    content: "\0020";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 50px #fff, inset 0 0 50px #fff;
+}
+
+.loader:after {
+    z-index: 1;
+    animation: gogoloader 2s infinite 1s;
+}
+
+.loader:before {
+    z-index: 2;
+    animation: gogoloader 2s infinite;
+}
+
+@keyframes gogoloader {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 0;
+    }
+} */
+
+
+.ldr {
+    animation: bottom-ripple 1s ease-in-out infinite -50ms;
+    background-color: #323d43;
+    border-radius: 50%;
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.4);
+    height: 12em;
+    position: relative;
+    width: 12em;
+}
+
+.ldr::before,
+.ldr::after {
+    border-radius: inherit;
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.4);
+    content: "";
+    left: 50%;
+    position: absolute;
+    top: 50%;
+}
+
+.ldr::before {
+    animation: middle-ripple 1s ease-in-out infinite -25ms;
+    background-color: #386e75;
+    height: 8em;
+    margin: -4em 0 0 -4em;
+    width: 8em;
+}
+
+.ldr::after {
+    animation: top-ripple 1s ease-in-out infinite;
+    background-color: #3b8f98;
+    height: 4em;
+    margin: -2em 0 0 -2em;
+    width: 4em;
+}
+
+@keyframes bottom-ripple {
+    0% {
+        box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.4);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 1.5em 1.5em rgba(0, 0, 0, 0.4);
+        transform: scale(1.25);
+    }
+}
+
+@keyframes middle-ripple {
+    0% {
+        box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.4);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 1.5em 1.5em rgba(0, 0, 0, 0.4);
+        transform: scale(1.1);
+    }
+}
+
+@keyframes top-ripple {
+    0% {
+        box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.4);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 1.5em 1.5em rgba(0, 0, 0, 0.4);
+        transform: scale(1.4);
+    }
+}

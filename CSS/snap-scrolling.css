@@ -1,0 +1,34 @@
+.body-container {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    overflow: hidden;
+}
+
+.section-5-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.section-5 {
+    height: 70vh;
+}
+
+footer {
+    /* height: 100vh; */
+    width: 100%;
+    scroll-snap-align: start;
+    overflow: hidden;
+}
